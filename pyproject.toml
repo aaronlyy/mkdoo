@@ -11,7 +11,7 @@ packages = ["src/mkdoo"]
 [project]
 name = "mkdoo"
 dynamic = ["version"]
-description = "Scaffold new Odoo addons from the command line"
+description = "Set up Odoo environments and scaffold new addons from the command line"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
