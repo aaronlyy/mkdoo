@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mkdoo"]
+
+[project]
+name = "mkdoo"
+dynamic = ["version"]
+description = "Scaffold new Odoo addons from the command line"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "aaronlyy" }]
+keywords = ["odoo", "scaffold", "cli"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Framework :: Odoo",
+    "Environment :: Console",
+]
+dependencies = [
+    "jinja2>=3.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/aaronlyy/mkdoo"
+Issues = "https://github.com/aaronlyy/mkdoo/issues"
+
+[project.scripts]
+mkdoo = "mkdoo.cli:main"
+
+[dependency-groups]
+dev = ["pytest", "ruff", "mypy"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
